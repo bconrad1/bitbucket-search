@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import SwaggerFormatter from './components/SwaggerFormatter';
 
 class App extends Component {
 
   render() {
     return (
-       <div>Hello World</div>
+      <div className={'swagger-formatter'}>
+        <SwaggerFormatter/>
+      </div>
     );
   }
 }

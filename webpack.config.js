@@ -7,27 +7,26 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-    output: {
-        path: path.resolve("dist"),
-        filename: "bundled.js"
-    },
-    module: {
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use:{
-          loader: "babel-loader"
-        }
-      },{
-        test: /\.css$/,
+        use: {
+          loader: 'babel-loader',
+        },
+      }, {
+        test: /\.(scss|css)$/,
         use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader"
-        ]
-      }
-    ]
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin],
 };

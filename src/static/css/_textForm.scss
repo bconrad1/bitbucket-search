@@ -1,0 +1,51 @@
+@import './variables';
+
+.text-area-container{
+  margin-top: 50px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.text-area-form, .text-area, .text-area-container {
+  height: 100%;
+  text-align: center;
+}
+
+.text-area {
+  resize: none;
+  background-color: $primaryColorDark;
+  width: 75%;
+  height: 75%;
+  text-align: left;
+  padding: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: $primaryColorOffWhite;
+  letter-spacing: 1.2px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+textarea:focus {
+  outline: none !important;
+  -webkit-box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px 1px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: $primaryColorMediumLight;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primaryColorMedium;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primaryColorDarkest;
+  cursor: pointer;
+}
