@@ -1,3 +1,51 @@
-.swagger-formatter, .swagger-formatter-container{
+@import './_variables.scss';
+
+.swagger-formatter, .swagger-formatter-container {
   height: 100%;
+}
+
+.site-title {
+  text-align: left;
+  margin-bottom: 25px;
+  height: 50px;
+  background: $primaryColorDark;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: row;
+
+  .site-title-text {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    color: $primaryColorOffWhite;
+    display: inline-block;
+    padding: 10px;
+  }
+  .site-title-name {
+    font-weight: 700;
+  }
+  .swagger-logo {
+    margin-left: 16px;
+    display: inline-block;
+    img {
+      width: 25px;
+    }
+  }
+
+  .git-logo {
+    color: $primaryColorOffWhite;
+    margin: 0 25px 0 auto;
+    font-size: 32px;
+    align-self: flex-end;
+  }
+  .git-logo-link{
+    color: $primaryColorOffWhite;
+  }
+  .git-logo-link:hover{
+    color: white;
+    cursor: pointer;
+  }
 }
