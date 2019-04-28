@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TextForm from './TextForm/TextForm';
 import Header from './Header/Header';
-import FileUploader from './TextForm/FileUploader';
 
 class SwaggerFormatter extends Component {
+
   render() {
+    console.log(this.props.formData)
     return (
       <div className={'swagger-formatter-container'}>
         <Header/>
@@ -16,7 +17,7 @@ class SwaggerFormatter extends Component {
 }
 
 function mapStateToProps(state) {
-  return {formData: state.formData};
+  return {formData: state.reducer.formData};
 }
 
 export default connect(mapStateToProps)(SwaggerFormatter);

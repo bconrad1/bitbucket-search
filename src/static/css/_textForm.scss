@@ -1,10 +1,11 @@
 @import './variables';
 
-.input-container{
+.input-container {
   height: 100%;
   font-family: 'Roboto Mono', monospace;
   margin-top: 100px;
 }
+
 .text-area-container {
   width: 75%;
   height: 75%;
@@ -13,7 +14,6 @@
   .text-area {
     resize: none;
     border: none;
-
 
     width: 100%;
     height: 100%;
@@ -34,7 +34,7 @@
   }
 }
 
-.text-area-form, .text-area {
+textarea {
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -59,41 +59,8 @@
 }
 
 textarea:focus {
-   outline: none !important;
-   //-webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
-   //-moz-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
-   //box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
- }
-
-.options-bar {
-  height: 50px;
-  background-color: $primaryColorMedium;
-  width: 75%;
-  margin: 0 auto;
-  border-radius: 5px 5px 0 0;
-  border-bottom: 1px solid $primaryColorMediumLight;
-}
-
-.chose-btn-container {
-  text-align: center;
-
-  .inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-  }
-
-  .btn {
-    width: 200px;
-    height: 200px;
-    background-color: $primaryColorMedium;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Roboto Mono', monospace;
-    color: $primaryColorOffWhite;
-    text-transform: uppercase;
-  }
+  outline: none !important;
+  //-webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+  //-moz-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
+  //box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.3);
 }

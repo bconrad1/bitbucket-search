@@ -1,0 +1,66 @@
+
+.options-bar {
+  height: 50px;
+  background-color: $primaryColorMedium;
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid $primaryColorMediumLight;
+  display: flex;
+  box-sizing: border-box;
+  font-size: 24px;
+  align-items: center;
+  padding: 0 16px;
+  .form-container {
+    display: flex;
+    align-items: center;
+    
+    .upload-btn-container {
+      text-align: center;
+      display: inline;
+      .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+      .btn {
+        font-family: 'Roboto Mono', monospace;
+        color: $primaryColorAccent;
+        text-transform: uppercase;
+        vertical-align: middle;
+      }
+
+      .btn:hover {
+        color: $primaryColorWhite;
+        cursor: pointer;
+      }
+    }
+
+    .upload-btn-label-container {
+      display: inline-block;
+      font-size: 16px;
+      color: $primaryColorOffWhite;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+  }
+
+  .options-copy {
+    color: $primaryColorOffWhite;
+    margin-left: auto;
+  }
+  .options-copy:hover {
+    color: $primaryColorWhite;
+    cursor: pointer;
+  }
+
+  .options-copy-disabled {
+    color: $primaryColorMediumLight;
+    margin-left: auto;
+  }
+}
+
