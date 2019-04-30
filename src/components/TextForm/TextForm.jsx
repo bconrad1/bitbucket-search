@@ -23,6 +23,7 @@ class TextForm extends Component {
     const formText = event.target.value;
     const lineCount = this.getLineCount(formText);
     this.setState({
+      currentText: formText,
       lineCount,
     });
     this.props.formAction.getFormData(formText);
@@ -30,10 +31,14 @@ class TextForm extends Component {
 
   handleFileLoaded = (e) => {
     const fileData = fileReader.result;
-    this.setState({
-      fileData,
-      lineCount: this.getLineCount(fileData)
-    })
+    if (fileData) {
+      this.props.formAction.getFormData(fileData);
+      this.setState({
+        currentText: fileData,
+        lineCount: this.getLineCount(fileData),
+      });
+    }
+
   };
 
   onUploadClick = (e) => {
@@ -44,14 +49,14 @@ class TextForm extends Component {
   };
 
   render() {
-    let {fileData} = this.state;
+    let {currentText} = this.state;
     return (
       <div className={'input-container'}>
         <OptionsBar onUploadClick={this.onUploadClick}/>
         <div className={'text-area-container'}>
           <textarea className={'text-area'}
                     spellCheck="false"
-                    value={fileData ? fileData : null }
+                    value={currentText}
                     onChange={this.handleOnChange}/>
           <div className={'line-count'}>
             <span>LINES: {this.state.lineCount}</span>
