@@ -14,7 +14,7 @@
   .form-container {
     display: flex;
     align-items: center;
-    
+
     .upload-btn-container {
       text-align: center;
       display: inline;
@@ -53,14 +53,22 @@
     color: $primaryColorOffWhite;
     margin-left: auto;
   }
-  .options-copy:hover {
-    color: $primaryColorWhite;
-    cursor: pointer;
-  }
-
-  .options-copy-disabled {
+    .options-copy-disabled {
     color: $primaryColorMediumLight;
     margin-left: auto;
+  }
+  .options-clear{
+    color: $primaryColorOffWhite;
+    margin-left:12px;
+  }
+  .options-clear-disabled{
+    color: $primaryColorMediumLight;
+    margin-left: 12px;
+  }
+
+  .options-clear:hover, .options-copy:hover{
+    color: $primaryColorWhite;
+    cursor: pointer;
   }
 }
 

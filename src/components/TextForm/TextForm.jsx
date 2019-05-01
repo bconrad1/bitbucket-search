@@ -38,11 +38,22 @@ class TextForm extends Component {
         lineCount: this.getLineCount(fileData),
       });
     }
+  };
 
+  onClearClick = () => {
+    const emptyText = '';
+    this.setState({
+      currentText: emptyText,
+      lineCount: 0
+    });
+    this.props.formAction.getFormData(emptyText);
   };
 
   onUploadClick = (e) => {
     const file = e.target.files[0];
+    console.log(file);
+    const fileType = file['name'].split('.').slice(-1)[0];
+    this.props.formAction.getFileType(fileType);
     fileReader = new FileReader();
     fileReader.onloadend = this.handleFileLoaded;
     fileReader.readAsText(file);
@@ -52,7 +63,8 @@ class TextForm extends Component {
     let {currentText} = this.state;
     return (
       <div className={'input-container'}>
-        <OptionsBar onUploadClick={this.onUploadClick}/>
+        <OptionsBar onUploadClick={this.onUploadClick}
+                    onClearClick={this.onClearClick}/>
         <div className={'text-area-container'}>
           <textarea className={'text-area'}
                     spellCheck="false"
@@ -62,7 +74,6 @@ class TextForm extends Component {
             <span>LINES: {this.state.lineCount}</span>
           </div>
         </div>
-
       </div>
     );
   }

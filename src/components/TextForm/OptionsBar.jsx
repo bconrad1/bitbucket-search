@@ -1,10 +1,10 @@
 import React from 'react';
-import {FaCopy} from 'react-icons/fa';
+import {FaCopy, FaEraser} from 'react-icons/fa';
 import {connect} from 'react-redux';
 import FileUploader from './FileUploader';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-const OptionsBar = ({formData, onUploadClick}) => {
+const OptionsBar = ({formData, onUploadClick, onClearClick}) => {
   return (<div className={'options-bar'}>
     <FileUploader onUploadClick={onUploadClick}/>
     <CopyToClipboard text={formData}>
@@ -12,6 +12,9 @@ const OptionsBar = ({formData, onUploadClick}) => {
         <FaCopy/>
       </div>
     </CopyToClipboard>
+    <div className={formData ? 'options-clear' : 'options-clear-disabled'} onClick={onClearClick}>
+      <FaEraser/>
+    </div>
   </div>);
 };
 

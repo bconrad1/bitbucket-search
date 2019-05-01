@@ -1,3 +1,4 @@
 export default{
-  formData: {}
+  formData: {},
+  fileType: ''
 };

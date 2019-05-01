@@ -18,7 +18,7 @@ class FileUploader extends Component {
           <label htmlFor='file' className={'btn'}><FaFileUpload/></label>
         </div>
         <div className={'upload-btn-label-container'}>
-          <span className={'upload-btn-label'}>{'JSON/YAML'}</span>
+          <span className={'upload-btn-label'}>{'UPLOAD'}</span>
         </div>
       </div>
     );
